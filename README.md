@@ -60,6 +60,18 @@ To verify the sort is correct (with the checker provided by 42):
 ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
 ```
 
+To verify benchmarks (100 random numbers):
+
+```bash
+ARG=$(python3 -c "import random; nums = list(range(100)); random.shuffle(nums); print(' '.join(map(str, nums)))"); ./push_swap $ARG | wc -l
+```
+
+To verify benchmarks (500 random numbers):
+
+```bash
+ARG=$(python3 -c "import random; nums = list(range(500)); random.shuffle(nums); print(' '.join(map(str, nums)))"); ./push_swap $ARG | wc -l
+```
+
 ### Error handling
 
 The program displays `Error` on stderr in the following cases:

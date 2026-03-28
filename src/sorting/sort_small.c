@@ -6,7 +6,7 @@
 /*   By: adchebbi <adchebbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 07:19:41 by adchebbi          #+#    #+#             */
-/*   Updated: 2026/03/26 07:21:16 by adchebbi         ###   ########.fr       */
+/*   Updated: 2026/03/27 21:46:10 by adchebbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	sort_three(t_stack **a)
 	if (first > second && first > third)
 	{
 		ra(a);
-		if (second > third)
+		if ((*a)->index > (*a)->next->index)
 			sa(a);
 	}
 	else if (second > first && second > third)
 	{
 		rra(a);
-		if (first > third)
+		if ((*a)->index > (*a)->next->index)
 			sa(a);
 	}
 	else
