@@ -6,7 +6,7 @@
 /*   By: adchebbi <adchebbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 07:08:46 by adchebbi          #+#    #+#             */
-/*   Updated: 2026/03/26 07:16:16 by adchebbi         ###   ########.fr       */
+/*   Updated: 2026/03/28 21:04:43 by adchebbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ t_stack	*parse_args(int argc, char **argv)
 		args = ft_split(argv[1], ' ');
 	if (!args || !args[0])
 		return (NULL);
-	i = -1;
-	while (args[++i])
+	i = 0;
+	while (args[i])
 	{
 		if (!process_arg(&a, args[i]))
 			return (free_and_return(a, args, argc));
+		i++;
 	}
 	if (argc == 2)
 		free_tab(args);

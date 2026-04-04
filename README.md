@@ -57,7 +57,7 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 To verify the sort is correct (with the checker provided by 42):
 
 ```bash
-ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
 ```
 
 To verify benchmarks (100 random numbers):
@@ -98,4 +98,4 @@ make re       # Recompile everything
 
 ### AI usage
 
-AI (Claude) was used as a learning companion during this project. It helped me understand the following concepts: linked list manipulation, double pointers in C, the cost-based sorting algorithm, and edge case handling in parsing. The code was written step by step with explanations at each stage, followed by a review session to ensure full understanding of every component.
+AI (Claude) was used as a learning companion during this project. It helped me understand the following concepts: the cost-based sorting algorithm, and edge case handling in parsing. The code was written step by step with explanations at each stage, followed by a review session to ensure full understanding of every component.

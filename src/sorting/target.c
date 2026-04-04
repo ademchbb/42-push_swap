@@ -6,7 +6,7 @@
 /*   By: adchebbi <adchebbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 07:21:40 by adchebbi          #+#    #+#             */
-/*   Updated: 2026/03/26 07:33:35 by adchebbi         ###   ########.fr       */
+/*   Updated: 2026/03/31 09:00:52 by adchebbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,15 @@ static int	find_target_in_b(t_stack *b, int index)
 	return (target_pos);
 }
 
+void	assign_targets(t_stack *a, t_stack *b)
+{
+	while (a)
+	{
+		a->target_pos = find_target_in_b(b, a->index);
+		a = a->next;
+	}
+}
+
 int	find_target_in_a(t_stack *a, int index)
 {
 	int		best_match;
@@ -81,13 +90,4 @@ int	find_target_in_a(t_stack *a, int index)
 	if (best_match == INT_MAX)
 		return (get_min_pos(a));
 	return (target_pos);
-}
-
-void	assign_targets(t_stack *a, t_stack *b)
-{
-	while (a)
-	{
-		a->target_pos = find_target_in_b(b, a->index);
-		a = a->next;
-	}
 }
