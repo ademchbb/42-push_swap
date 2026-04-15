@@ -67,7 +67,11 @@ t_stack	*parse_args(int argc, char **argv)
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	if (!args || !args[0])
+	{
+		if (argc == 2)
+			free_tab(args);
 		return (NULL);
+	}
 	i = 0;
 	while (args[i])
 	{
