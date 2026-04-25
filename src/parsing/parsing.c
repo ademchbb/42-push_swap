@@ -6,7 +6,7 @@
 /*   By: adchebbi <adchebbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 07:08:46 by adchebbi          #+#    #+#             */
-/*   Updated: 2026/03/28 21:04:43 by adchebbi         ###   ########.fr       */
+/*   Updated: 2026/04/19 19:26:38 by adchebbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static int	has_duplicate(t_stack *stack, int value)
 static int	process_arg(t_stack **a, char *arg)
 {
 	long	value;
+	t_stack	*node;
 
 	if (!is_valid_number(arg))
 		return (0);
@@ -52,7 +53,10 @@ static int	process_arg(t_stack **a, char *arg)
 		return (0);
 	if (has_duplicate(*a, (int)value))
 		return (0);
-	add_back(a, new_node((int)value));
+	node = new_node((int)value);
+	if (!node)
+		return (0);
+	add_back(a, node);
 	return (1);
 }
 

@@ -14,8 +14,10 @@
 
 static void	push_all_to_b(t_stack **a, t_stack **b)
 {
-	pb(a, b);
-	pb(a, b);
+	if (stack_size(*a) > 3)
+		pb(a, b);
+	if (stack_size(*a) > 3)
+		pb(a, b);
 	while (stack_size(*a) > 3)
 	{
 		assign_positions(*a);
